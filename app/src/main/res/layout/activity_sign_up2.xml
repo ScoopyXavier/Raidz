@@ -134,52 +134,16 @@
         android:id="@+id/txtPhone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:autofillHints=""
         android:ems="10"
-        android:hint="@string/_0761234567"
+        android:hint="0123456789"
         android:inputType="phone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.646"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.709"
-        android:autofillHints="" />
-
-    <CheckBox
-        android:id="@+id/chbFemale"
-        android:layout_width="87dp"
-        android:layout_height="47dp"
-        android:text="@string/female"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.561"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.795" />
-
-    <CheckBox
-        android:id="@+id/chbMale"
-        android:layout_width="74dp"
-        android:layout_height="48dp"
-        android:text="@string/male"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.222"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.795" />
-
-    <CheckBox
-        android:id="@+id/chbOther"
-        android:layout_width="71dp"
-        android:layout_height="48dp"
-        android:text="@string/other"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.888"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.793" />
+        app:layout_constraintVertical_bias="0.717" />
 
     <ImageView
         android:id="@+id/imageView12"
@@ -195,23 +159,8 @@
         tools:ignore="VectorDrawableCompat"
         android:contentDescription="@string/todo12" />
 
-    <EditText
-        android:id="@+id/txtDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/mm_dd_yyyy"
-        android:inputType="date"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.646"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.644"
-        android:autofillHints="" />
-
     <ImageView
-        android:id="@+id/imageView14"
+        android:id="@+id/icnDOB"
         android:layout_width="44dp"
         android:layout_height="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -224,18 +173,63 @@
         tools:ignore="VectorDrawableCompat"
         android:contentDescription="@string/todo8" />
 
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="292dp"
+        android:layout_height="64dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.722"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.821">
+
+        <RadioButton
+            android:id="@+id/rdMale"
+            android:layout_width="99dp"
+            android:layout_height="match_parent"
+            android:text="Male" />
+
+        <RadioButton
+            android:id="@+id/rdFemale"
+            android:layout_width="102dp"
+            android:layout_height="43dp"
+            android:text="Female" />
+
+        <RadioButton
+            android:id="@+id/rdOther"
+            android:layout_width="97dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Other" />
+
+    </RadioGroup>
+
     <ImageButton
         android:id="@+id/btnCont1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/rectangele5"
-        android:contentDescription="@string/todo10"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.886"
-        app:srcCompat="@drawable/continue1" />
+        app:layout_constraintVertical_bias="0.921"
+        app:srcCompat="@drawable/continue7" />
+
+    <EditText
+        android:id="@+id/txtDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="date"
+        android:hint="Click to Enter D. of Birth "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.641"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.644" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

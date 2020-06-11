@@ -8,60 +8,104 @@
     android:background="@drawable/gradient_backgroud">
 
     <ImageView
-        android:id="@+id/imageView32"
+        android:id="@+id/imgTrees"
         android:layout_width="500dp"
         android:layout_height="346dp"
-        android:layout_marginBottom="428dp"
+        android:layout_marginBottom="1168dp"
+        android:contentDescription="@string/todo24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintHorizontal_bias="0.581"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.953"
+        app:layout_constraintVertical_bias="0.044"
         app:srcCompat="@drawable/galaxywallpaper" />
 
     <ImageButton
-        android:id="@+id/btnEdit"
-        android:layout_width="150dp"
-        android:layout_height="188dp"
-        android:background="@drawable/rectangle17"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.13"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.696"
-        app:srcCompat="@drawable/edit" />
+            android:id="@+id/btnEdit"
+            android:layout_width="150dp"
+            android:layout_height="188dp"
+            android:background="@drawable/rectangle17"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.113"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/edit"
+            android:contentDescription="@string/todo25" />
 
-    <ImageButton
-        android:id="@+id/btnHistory"
-        android:layout_width="140dp"
-        android:layout_height="187dp"
-        android:background="@drawable/rectangle17"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.889"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.696"
-        app:srcCompat="@drawable/history" />
+        <ImageButton
+            android:id="@+id/btnHistory"
+            android:layout_width="140dp"
+            android:layout_height="187dp"
+            android:background="@drawable/rectangle17"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.904"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.501"
+            app:srcCompat="@drawable/history"
+            android:contentDescription="@string/todo26" />
 
     <ImageButton
         android:id="@+id/btnBrowse"
-        android:layout_width="144dp"
+        android:layout_width="150dp"
         android:layout_height="196dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
         android:layout_marginTop="624dp"
         android:layout_marginEnd="14dp"
         android:layout_marginRight="14dp"
         android:background="@drawable/rectangle17"
+        android:contentDescription="@string/todo29"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnEdit"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.122"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.224"
+        app:layout_constraintVertical_bias="0.264"
         app:srcCompat="@drawable/browse" />
+
+    <ImageButton
+            android:id="@+id/btnNotifications"
+            android:layout_width="142dp"
+            android:layout_height="198dp"
+            android:background="@drawable/rectangle17"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.903"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.725"
+            app:srcCompat="@drawable/notification"
+        android:contentDescription="@string/todo27" />
+
+    <ImageButton
+        android:id="@+id/btnHelp"
+        android:layout_width="147dp"
+        android:layout_height="199dp"
+        android:background="@drawable/rectangle17"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.125"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.955"
+        app:srcCompat="@drawable/help"
+        android:contentDescription="@string/todo28" />
+
+    <ImageButton
+        android:id="@+id/btnSettings"
+        android:layout_width="135dp"
+        android:layout_height="199dp"
+        android:background="@drawable/rectangle17"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.885"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.954"
+        app:srcCompat="@drawable/settings"
+        android:contentDescription="@string/todo30" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

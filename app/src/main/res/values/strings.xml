@@ -45,4 +45,11 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string name="todo24">TODO</string>
+    <string name="todo25">TODO</string>
+    <string name="todo31">TODO</string>
+    <string name="todo26">TODO</string>
+    <string name="todo27">TODO</string>
+    <string name="todo28">TODO</string>
+    <string name="todo29">TODO</string>
+    <string name="todo30">TODO</string>
 </resources>

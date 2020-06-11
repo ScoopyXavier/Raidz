@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-public class MainActivity extends AppCompatActivity {
+public class LandingPage extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,12 +18,21 @@ public class MainActivity extends AppCompatActivity {
 
     //Move to next page on button click ("Sign Up")
 
-        ImageButton Signup = (ImageButton) findViewById(R.id.btnSignUp);
+        ImageButton SignUp = findViewById(R.id.btnSignUp);
 
-        Signup.setOnClickListener(new View.OnClickListener() {
+        SignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openSignUp();
+            }
+        });
+
+        ImageButton login = findViewById(R.id.btnLogin1);
+
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openLogin2();
             }
         });
     }
@@ -33,5 +42,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
 
+    }
+
+    public void openLogin2(){
+        Intent intent = new Intent (this,Login.class);
+        startActivity(intent);
     }
 }
