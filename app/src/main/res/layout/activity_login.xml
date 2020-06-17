@@ -71,7 +71,7 @@
             android:contentDescription="@string/todo20" />
 
         <EditText
-            android:id="@+id/txtMail"
+            android:id="@+id/txtMail2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/rectangle6"

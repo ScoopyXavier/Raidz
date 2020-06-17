@@ -8,10 +8,15 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,55 +37,129 @@ import java.util.Map;
 
 public class SignUp2 extends AppCompatActivity {
 
-    //Date Pop up
-    private static final String TAG = "SignUp2";
-    private DatePickerDialog.OnDateSetListener dateSetListener;
+    //Registration
+    private EditText Fname, Lname, Email, Password, Confirm;
+    private String s_Fname, s_Lname, s_Email, s_Password;
+    private CheckBox peek, peek2;
+    private ImageButton register;
+    private ProgressBar loading;
+    private static String URL_REG = "https://lamp.ms.wits.ac.za/~s1445435/register.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up2);
 
-        //move to SignUp3 page
-        final ImageButton SignUp3 = findViewById(R.id.btnCont1);
-        SignUp3.setOnClickListener(new View.OnClickListener() {
+        register = findViewById(R.id.btnRegister);
+
+        //Registration
+        loading = findViewById(R.id.loading);
+        Fname = findViewById(R.id.txtFirst);
+        Lname = findViewById(R.id.txtLast);
+        Email = findViewById(R.id.txtMail);
+        Password = findViewById(R.id.txtCreate);
+        Confirm = findViewById(R.id.txtConfirm);
+        peek = findViewById(R.id.peek);
+        peek2 = findViewById(R.id.peek2);
+
+        register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openSignUp3();
+                Registration();
+                //openApp();
             }
         });
 
-        //date pop up
-        final TextView dateDisplay = findViewById(R.id.txtDate);
-
-        dateDisplay.setOnClickListener(new View.OnClickListener() {
+        //Show Password
+        peek.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onClick(View v) {
-                Calendar cal = Calendar.getInstance();
-                int year = cal.get(Calendar.YEAR);
-                int month = cal.get(Calendar.MONTH);
-                int day = cal.get(Calendar.DAY_OF_MONTH);
-
-                DatePickerDialog dialog = new DatePickerDialog(SignUp2.this,android.R.style.Theme_Holo_Light_Dialog, dateSetListener, year, month,day);
-                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                dialog.show();
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if(isChecked){
+                    Password.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                }
+                else{
+                    Password.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                }
             }
         });
 
-        dateSetListener = new DatePickerDialog.OnDateSetListener() {
+        peek2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                //Log.d(TAG, "onDateSet: mm/dd/yyy: " + month + "/" + dayOfMonth + "/" + year);
-                String date = dayOfMonth + "/" + month + "/" + year;
-                dateDisplay.setText(date);
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                if (isChecked) {
+                    Confirm.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                } else {
+                    Confirm.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                }
+            }
+        });
+
+    }
+
+    //Registration
+    private void Registration(){
+        loading.setVisibility(View.VISIBLE);
+        register.setVisibility(View.GONE);
+
+        //Disallow Continuation when text_box empty
+        if (Fname.getText().toString().equals("")){
+            Toast.makeText(this, "Please Enter Your First Name", Toast.LENGTH_SHORT).show();
+        }
+        else if (Lname.getText().toString().equals("")){
+            Toast.makeText(this, "Please Enter Your Last Name", Toast.LENGTH_SHORT).show();
+        }
+        else if(Email.getText().toString().equals("")){
+            Toast.makeText(this, "Please Enter Your Email Address", Toast.LENGTH_SHORT).show();
+        }
+        else if(Password.getText().toString().equals("")){
+            Toast.makeText(this, "Please Enter Your Password", Toast.LENGTH_SHORT).show();
+        }
+        else if(Confirm.getText().toString().equals("")){
+            Toast.makeText(SignUp2.this, "Please Confirm Your Password", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            s_Fname = this.Fname.getText().toString().trim();
+            s_Lname = this.Lname.getText().toString().trim();
+            s_Email = this.Email.getText().toString().trim();
+            s_Password = this.Password.getText().toString().trim();
+            //s_Confirm = this.confirm.getText().toString().trim();
+        }
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_REG, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Toast.makeText(SignUp2.this, response, Toast.LENGTH_SHORT).show();
+                loading.setVisibility(View.GONE);
+                register.setVisibility(View.VISIBLE);
+
+            }
+
+        },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(SignUp2.this, error.getMessage().toString(), Toast.LENGTH_SHORT).show();
+                        loading.setVisibility(View.GONE);
+                        register.setVisibility(View.VISIBLE);
+                    }
+                })
+        {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("Fname", s_Fname);
+                params.put("Lname", s_Lname);
+                params.put("Email", s_Email);
+                params.put("Password", s_Password);
+
+                return params;
             }
         };
 
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
     }
-    //move to SignUp3 page
-    public void openSignUp3(){
-        Intent intent = new Intent(this,SignUp3.class);
-        startActivity(intent);
-    }
-
 }
+
+
+
