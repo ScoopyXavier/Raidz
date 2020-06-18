@@ -134,6 +134,7 @@
             android:autofillHints="" />
 
         <ProgressBar
+            android:id="@+id/loading"
             android:layout_width="370dp"
             android:layout_height="60dp"
             android:visibility="gone"
