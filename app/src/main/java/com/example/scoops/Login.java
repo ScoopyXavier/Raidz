@@ -51,12 +51,16 @@ public class Login extends AppCompatActivity {
                 String s_email = Email.getText().toString().trim();
                 String s_password = Password.getText().toString().trim();
 
-                if (!s_email.isEmpty() || !s_password.isEmpty()){
+                if (!s_email.isEmpty() && !s_password.isEmpty()){
                     Login(s_email, s_password);
                 }
-                else{
-                    Email.setError("Please Enter Your Email Address");
-                    Password.setError("Please Enter Your Password");
+                else {
+                    if (s_email.isEmpty()) {
+                        Email.setError("Please Enter Your Email Address");
+                    }
+                    if (s_password.isEmpty()) {
+                        Password.setError("Please Enter Your Password");
+                    }
                 }
 
             }
@@ -75,14 +79,14 @@ public class Login extends AppCompatActivity {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_LOGIN, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                loading.setVisibility(View.GONE);
-                Login.setVisibility(View.VISIBLE);
 
                 if (response.contains("1")) {
                     startActivity(new Intent(getApplicationContext(), VolunteerProfile.class));
                 } else {
                     Toast.makeText(getApplicationContext(), "Wrong Username or Password!", Toast.LENGTH_SHORT).show();
                 }
+                loading.setVisibility(View.GONE);
+                Login.setVisibility(View.VISIBLE);
             }
         },
                 new Response.ErrorListener() {

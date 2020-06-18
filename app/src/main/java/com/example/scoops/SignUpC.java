@@ -40,7 +40,7 @@ public class SignUpC extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up_c);
         register = findViewById(R.id.btnRegister2);
 
-        //Registration
+        //Registration/
         loading = findViewById(R.id.loading);
         Fname = findViewById(R.id.txtFirst2);
         Lname = findViewById(R.id.txtLast2);
