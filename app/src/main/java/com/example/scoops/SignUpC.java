@@ -2,22 +2,16 @@ package com.example.scoops;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.DatePickerDialog;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -28,51 +22,45 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
-public class SignUp2 extends AppCompatActivity {
-
+public class SignUpC extends AppCompatActivity {
     //Registration
     private EditText Fname, Lname, Email, Password, Confirm;
     private String s_Fname, s_Lname, s_Email, s_Password;
     private CheckBox peek, peek2;
     private ImageButton register;
     private ProgressBar loading;
-    private static String URL_REG = "https://lamp.ms.wits.ac.za/~s1445435/register.php";
+    private static String URL_REG = "https://lamp.ms.wits.ac.za/~s1445435/registerC.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_up2);
-
-        register = findViewById(R.id.btnRegister);
+        setContentView(R.layout.activity_sign_up_c);
+        register = findViewById(R.id.btnRegister2);
 
         //Registration
         loading = findViewById(R.id.loading);
-        Fname = findViewById(R.id.txtFirst);
-        Lname = findViewById(R.id.txtLast);
-        Email = findViewById(R.id.txtMail);
-        Password = findViewById(R.id.txtCreate);
-        Confirm = findViewById(R.id.txtConfirm);
-        peek = findViewById(R.id.peek);
-        peek2 = findViewById(R.id.peek2);
+        Fname = findViewById(R.id.txtFirst2);
+        Lname = findViewById(R.id.txtLast2);
+        Email = findViewById(R.id.txtMail4);
+        Password = findViewById(R.id.txtCreate2);
+        Confirm = findViewById(R.id.txtConfirm2);
+        peek = findViewById(R.id.peek4);
+        peek2 = findViewById(R.id.peek3);
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                //openApp();
                 String s_email = Email.getText().toString().trim();
                 String s_Fname = Fname.getText().toString().trim();
                 String s_Lname = Lname.getText().toString().trim();
                 String s_Confirm = Confirm.getText().toString().trim();
                 String s_password = Password.getText().toString().trim();
 
-                //Disallow Continuation when text_box empty
                 if (!s_Fname.isEmpty() && !s_Lname.isEmpty() && !s_Confirm.isEmpty() && !s_email.isEmpty() && !s_password.isEmpty()){
                     Registration(s_Fname, s_Lname, s_email, s_password, s_Confirm);
                 }
@@ -93,6 +81,7 @@ public class SignUp2 extends AppCompatActivity {
                         Confirm.setError("Please Confirm Your Password");
                     }
                 }
+
             }
         });
 
@@ -128,15 +117,15 @@ public class SignUp2 extends AppCompatActivity {
 
         //Disallow Continuation when text_box empty
         if (Fname.getText().toString().equals("")) {
-            Toast.makeText(this, "Please Enter Your First Name", Toast.LENGTH_SHORT).show();
+            Toast.makeText(SignUpC.this, "Please Enter Your First Name", Toast.LENGTH_SHORT).show();
         } else if (Lname.getText().toString().equals("")) {
-            Toast.makeText(this, "Please Enter Your Last Name", Toast.LENGTH_SHORT).show();
+            Toast.makeText(SignUpC.this, "Please Enter Your Last Name", Toast.LENGTH_SHORT).show();
         } else if (Email.getText().toString().equals("")) {
-            Toast.makeText(this, "Please Enter Your Email Address", Toast.LENGTH_SHORT).show();
+            Toast.makeText(SignUpC.this, "Please Enter Your Email Address", Toast.LENGTH_SHORT).show();
         } else if (Password.getText().toString().equals("")) {
-            Toast.makeText(this, "Please Enter Your Password", Toast.LENGTH_SHORT).show();
+            Toast.makeText(SignUpC.this, "Please Enter Your Password", Toast.LENGTH_SHORT).show();
         } else if (Confirm.getText().toString().equals("")) {
-            Toast.makeText(this, "Please Confirm Your Password", Toast.LENGTH_SHORT).show();
+            Toast.makeText(SignUpC.this, "Please Confirm Your Password", Toast.LENGTH_SHORT).show();
         } else {
             loading.setVisibility(View.VISIBLE);
             register.setVisibility(View.GONE);
@@ -146,20 +135,21 @@ public class SignUp2 extends AppCompatActivity {
             s_Email = this.Email.getText().toString().trim();
             s_Password = this.Password.getText().toString().trim();
 
+
             StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_REG, new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
-                    Toast.makeText(SignUp2.this, response, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignUpC.this, response, Toast.LENGTH_SHORT).show();
                     loading.setVisibility(View.GONE);
                     register.setVisibility(View.VISIBLE);
-                    startActivity(new Intent(getApplicationContext(), VolunteerProfile.class));
+                    startActivity(new Intent(getApplicationContext(), ClientProfile.class));
                 }
 
             },
                     new Response.ErrorListener() {
                         @Override
                         public void onErrorResponse(VolleyError error) {
-                            Toast.makeText(SignUp2.this, error.getMessage().toString(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SignUpC.this, error.getMessage().toString(), Toast.LENGTH_SHORT).show();
                             loading.setVisibility(View.GONE);
                             register.setVisibility(View.VISIBLE);
                         }
@@ -176,11 +166,10 @@ public class SignUp2 extends AppCompatActivity {
                 }
             };
 
+
             RequestQueue requestQueue = Volley.newRequestQueue(this);
             requestQueue.add(stringRequest);
         }
     }
+
 }
-
-
-   //s_Confirm = this.confirm.getText().toString().trim();

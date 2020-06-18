@@ -74,6 +74,7 @@
             android:id="@+id/txtMail2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:autofillHints=""
             android:background="@drawable/rectangle6"
             android:ems="10"
             android:gravity="center"
@@ -84,24 +85,23 @@
             app:layout_constraintHorizontal_bias="0.692"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.461"
-            android:autofillHints="" />
+            app:layout_constraintVertical_bias="0.461" />
 
         <ImageView
             android:id="@+id/imageView24"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="13dp"
-            android:layout_marginLeft="13dp"
-            android:layout_marginBottom="95dp"
-            app:layout_constraintBottom_toTopOf="@+id/txtMail"
+            android:layout_marginStart="2dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginBottom="106dp"
+            android:contentDescription="@string/todo21"
+            app:layout_constraintBottom_toTopOf="@+id/txtMail2"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.439"
+            app:layout_constraintHorizontal_bias="0.447"
             app:layout_constraintStart_toEndOf="@+id/imageView15"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0"
-            app:srcCompat="@drawable/splatter"
-            android:contentDescription="@string/todo21" />
+            app:layout_constraintVertical_bias="0.899"
+            app:srcCompat="@drawable/splatter" />
 
         <ImageView
             android:id="@+id/imageView25"
@@ -132,6 +132,17 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.623"
             android:autofillHints="" />
+
+        <ProgressBar
+            android:layout_width="370dp"
+            android:layout_height="60dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.81"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.811" />
 
         <ImageButton
             android:id="@+id/btnLogin2"

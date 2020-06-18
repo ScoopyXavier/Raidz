@@ -14,18 +14,33 @@ public class SignUp extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
+        //Volunteer Sign up
         ImageButton vol = (ImageButton) findViewById(R.id.btnVolunteer);
-
         vol.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openSignUp2();
             }
         });
+
+        //Client Sign up
+        ImageButton cli = (ImageButton) findViewById(R.id.btnClient);
+        cli.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openSignUpC();
+            }
+        });
     }
 
     public void openSignUp2(){
         Intent intent = new Intent(this,SignUp2.class);
+        startActivity(intent);
+
+    }
+
+    public void openSignUpC(){
+        Intent intent = new Intent(this,SignUpC.class);
         startActivity(intent);
 
     }

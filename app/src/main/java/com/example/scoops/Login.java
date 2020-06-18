@@ -27,11 +27,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Login extends AppCompatActivity {
-
+    //LOGIN
     private EditText Password, Email;
     private ImageButton Login;
     private ProgressBar loading;
-    private String URL_LOGIN = "https://lamp.ms.wits.ac.za/~s1445435/login.php";
+    private String URL_LOGIN = "https://lamp.ms.wits.ac.za/~s1445435/login2.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +47,7 @@ public class Login extends AppCompatActivity {
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 String s_email = Email.getText().toString().trim();
                 String s_password = Password.getText().toString().trim();
 
@@ -57,19 +58,13 @@ public class Login extends AppCompatActivity {
                     Email.setError("Please Enter Your Email Address");
                     Password.setError("Please Enter Your Password");
                 }
-                //openVolunteer();
+
             }
         });
 
-
-
     }
 
-    public void openVolunteer(){
-        Intent intent = new Intent(this,VolunteerProfile.class);
-        startActivity(intent);
-    }
-
+    //LOGIN
     private void Login(final String email, final String password){
         loading.setVisibility(View.VISIBLE);
         Login.setVisibility(View.GONE);
@@ -78,6 +73,39 @@ public class Login extends AppCompatActivity {
         final String Password = this.Password.getText().toString().trim();
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_LOGIN, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                loading.setVisibility(View.GONE);
+                Login.setVisibility(View.VISIBLE);
+
+                if (response.contains("1")) {
+                    startActivity(new Intent(getApplicationContext(), VolunteerProfile.class));
+                } else {
+                    Toast.makeText(getApplicationContext(), "Wrong Username or Password!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        loading.setVisibility(View.GONE);
+                        Login.setVisibility(View.VISIBLE);
+                    }
+                })
+        {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+
+                params.put("Email", Email);
+                params.put("Password", Password);
+
+                return params;
+            }
+        };
+
+        //Alternative Garbage
+        /*StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_LOGIN, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 loading.setVisibility(View.GONE);
@@ -123,7 +151,8 @@ public class Login extends AppCompatActivity {
 
                 return params;
             }
-        };
+        };*/
+
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
     }
