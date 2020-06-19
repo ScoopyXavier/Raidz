@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+
+
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ClientProfile">
+
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="870dp">
+
+        <ImageView
+            android:id="@+id/imageView19"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="false"
+            android:layout_marginStart="44dp"
+            android:layout_marginLeft="44dp"
+            android:layout_marginTop="516dp"
+            android:layout_marginEnd="48dp"
+            android:layout_marginRight="58dp"
+            android:contentDescription="@string/todo18"
+            app:srcCompat="@drawable/surrogate2" />
+
+        <ProgressBar
+            android:id="@+id/loading"
+            android:layout_width="188dp"
+            android:layout_height="69dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="false"
+            android:layout_marginStart="71dp"
+            android:layout_marginLeft="71dp"
+            android:layout_marginTop="436dp"
+            android:layout_marginRight="61dp"
+            android:visibility="gone"
+            app:layout_constraintVertical_bias="0.835" />
+
+        <ImageButton
+            android:id="@+id/btnRegister2"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="false"
+            android:layout_marginStart="89dp"
+            android:layout_marginLeft="89dp"
+            android:layout_marginTop="456dp"
+            android:layout_marginRight="81dp"
+            android:background="@drawable/rectangele5"
+            app:srcCompat="@drawable/register" />
+
+        <EditText
+            android:id="@+id/txtCreate2"
+            android:layout_width="176dp"
+            android:layout_height="34dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="false"
+            android:layout_marginStart="80dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="335dp"
+            android:layout_marginRight="64dp"
+            android:background="@drawable/rectangle6"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Create Password"
+            android:inputType="textPassword"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="false"
+            android:layout_marginStart="36dp"
+            android:layout_marginLeft="36dp"
+            android:layout_marginTop="341dp"
+            android:layout_marginRight="249dp"
+            android:contentDescription="@string/todo19"
+            app:srcCompat="@drawable/ic_code" />
+
+        <EditText
+            android:id="@+id/txtConfirm2"
+            android:layout_width="173dp"
+            android:layout_height="32dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="false"
+            android:layout_marginStart="82dp"
+            android:layout_marginLeft="82dp"
+            android:layout_marginTop="384dp"
+            android:layout_marginRight="65dp"
+            android:background="@drawable/rectangle6"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Confirm Password"
+            android:inputType="textPassword"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+        <ImageView
+            android:id="@+id/imageView13"
+            android:layout_width="41dp"
+            android:layout_height="36dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="false"
+            android:layout_marginStart="36dp"
+            android:layout_marginLeft="36dp"
+            android:layout_marginTop="175dp"
+            android:layout_marginRight="243dp"
+            android:contentDescription="@string/todo13"
+            app:srcCompat="@drawable/ic_person"
+            tools:ignore="VectorDrawableCompat" />
+
+        <EditText
+            android:id="@+id/txtFirst2"
+            android:layout_width="188dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="false"
+            android:layout_marginStart="88dp"
+            android:layout_marginLeft="88dp"
+            android:layout_marginTop="168dp"
+            android:layout_marginRight="44dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/first_name"
+            android:inputType="textPersonName"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            app:layout_constraintVertical_bias="0.306" />
+
+        <EditText
+            android:id="@+id/txtLast2"
+            android:layout_width="185dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="false"
+            android:layout_marginStart="90dp"
+            android:layout_marginLeft="90dp"
+            android:layout_marginTop="222dp"
+            android:layout_marginRight="45dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/last_name"
+            android:inputType="textPersonName"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+        <EditText
+            android:id="@+id/txtMail4"
+            android:layout_width="185dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="false"
+            android:layout_marginStart="90dp"
+            android:layout_marginLeft="90dp"
+            android:layout_marginTop="274dp"
+            android:layout_marginRight="45dp"
+            android:ems="10"
+            android:hint="johndoe@hotmail.com"
+            android:inputType="textEmailAddress"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="false"
+            android:layout_marginStart="41dp"
+            android:layout_marginLeft="41dp"
+            android:layout_marginTop="281dp"
+            android:layout_marginRight="244dp"
+            app:srcCompat="@drawable/ic_mail"
+            tools:ignore="VectorDrawableCompat" />
+
+        <CheckBox
+            android:id="@+id/peek3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="false"
+            android:layout_marginStart="262dp"
+            android:layout_marginLeft="262dp"
+            android:layout_marginTop="377dp"
+            android:layout_marginRight="26dp"
+            android:button="@null"
+            android:drawableTop="?android:attr/listChoiceIndicatorMultiple"
+            android:text="Peek"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+        <CheckBox
+            android:id="@+id/peek4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="false"
+            android:layout_marginStart="262dp"
+            android:layout_marginLeft="262dp"
+            android:layout_marginTop="321dp"
+            android:layout_marginRight="26dp"
+            android:button="@null"
+            android:drawableTop="?android:attr/listChoiceIndicatorMultiple"
+            android:text="Peek"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="198dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="false"
+            android:layout_marginStart="6dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="79dp"
+            android:layout_marginRight="116dp"
+            android:contentDescription="@string/todo7"
+            app:srcCompat="@drawable/signupp" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="236dp"
+            android:layout_height="246dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="false"
+            android:layout_marginStart="108dp"
+            android:layout_marginLeft="108dp"
+            android:layout_marginTop="-85dp"
+            android:layout_marginRight="-11dp"
+            android:layout_marginBottom="522dp"
+            android:contentDescription="@string/todo11"
+            app:srcCompat="@drawable/splatter" />
+
+    </RelativeLayout>
+</ScrollView>
