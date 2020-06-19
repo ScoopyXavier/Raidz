@@ -10,8 +10,8 @@
 
     <ImageView
         android:id="@+id/imageView9"
-        android:layout_width="285dp"
-        android:layout_height="500dp"
+        android:layout_width="801dp"
+        android:layout_height="832dp"
         android:contentDescription="@string/todo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,11 +22,12 @@
 
     <ImageView
         android:id="@+id/imageView10"
-        android:layout_width="359dp"
-        android:layout_height="264dp"
+        android:layout_width="779dp"
+        android:layout_height="538dp"
         android:contentDescription="@string/todo2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
@@ -34,8 +35,8 @@
 
     <ImageButton
         android:id="@+id/btnClient"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="267dp"
+        android:layout_height="76dp"
         android:background="@drawable/rectangle4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,8 +48,8 @@
 
     <ImageButton
         android:id="@+id/btnVolunteer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="272dp"
+        android:layout_height="82dp"
         android:background="@drawable/rectangle4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
