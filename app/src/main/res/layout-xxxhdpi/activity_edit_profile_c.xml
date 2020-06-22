@@ -207,22 +207,6 @@
             android:textColor="#ffff"
             android:textColorHint="#778899" />
 
-        <ImageButton
-            android:id="@+id/btnSaveC"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="false"
-            android:layout_marginStart="106dp"
-            android:layout_marginLeft="106dp"
-            android:layout_marginTop="637dp"
-            android:layout_marginRight="99dp"
-            android:background="@drawable/btn"
-            app:srcCompat="@drawable/continue7" />
-
         <ImageView
             android:id="@+id/imageView17"
             android:layout_width="41dp"
@@ -289,6 +273,22 @@
             android:textColor="#ffff"
             android:textSize="25dp"
             android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/btnSaveC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="false"
+            android:layout_marginStart="153dp"
+            android:layout_marginLeft="153dp"
+            android:layout_marginTop="655dp"
+            android:layout_marginRight="137dp"
+            android:background="@drawable/rectangle38"
+            app:srcCompat="@drawable/save" />
 
 
     </RelativeLayout>

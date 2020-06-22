@@ -240,22 +240,6 @@
             android:textColor="#ffff"
             android:textColorHint="#778899" />
 
-        <ImageButton
-            android:id="@+id/btnSaveC"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="false"
-            android:layout_marginStart="93dp"
-            android:layout_marginLeft="93dp"
-            android:layout_marginTop="683dp"
-            android:layout_marginRight="77dp"
-            android:background="@drawable/btn"
-            app:srcCompat="@drawable/continue7" />
-
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profilepicC"
             android:layout_width="126dp"
@@ -289,6 +273,22 @@
             android:textColor="#ffff"
             android:textSize="25dp"
             android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/btnSaveC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="false"
+            android:layout_marginStart="112dp"
+            android:layout_marginLeft="112dp"
+            android:layout_marginTop="704dp"
+            android:layout_marginRight="141dp"
+            android:background="@drawable/rectangle38"
+            app:srcCompat="@drawable/save" />
 
     </RelativeLayout>
 </ScrollView>

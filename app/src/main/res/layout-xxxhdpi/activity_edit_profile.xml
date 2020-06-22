@@ -203,22 +203,6 @@
             app:srcCompat="@drawable/ic_mail"
             tools:ignore="VectorDrawableCompat" />
 
-        <ImageButton
-            android:id="@+id/btnSave"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="false"
-            android:layout_marginStart="105dp"
-            android:layout_marginLeft="105dp"
-            android:layout_marginTop="641dp"
-            android:layout_marginRight="100dp"
-            android:background="@drawable/btn"
-            app:srcCompat="@drawable/continue7" />
-
         <EditText
             android:id="@+id/txtMailE"
             android:layout_width="wrap_content"
@@ -289,6 +273,22 @@
             android:textColor="#ffff"
             android:textSize="25dp"
             android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/btnSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="false"
+            android:layout_marginStart="153dp"
+            android:layout_marginLeft="153dp"
+            android:layout_marginTop="690dp"
+            android:layout_marginRight="137dp"
+            android:background="@drawable/rectangle38"
+            app:srcCompat="@drawable/save" />
 
 
     </RelativeLayout>

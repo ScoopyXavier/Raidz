@@ -240,22 +240,6 @@
             app:srcCompat="@drawable/ic_mail"
             tools:ignore="VectorDrawableCompat" />
 
-        <ImageButton
-            android:id="@+id/btnSave"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="false"
-            android:layout_marginStart="110dp"
-            android:layout_marginLeft="110dp"
-            android:layout_marginTop="692dp"
-            android:layout_marginRight="95dp"
-            android:background="@drawable/btn"
-            app:srcCompat="@drawable/continue7" />
-
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profilepic"
             android:layout_width="135dp"
@@ -289,6 +273,22 @@
             android:textColor="#ffff"
             android:textSize="25dp"
             android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/btnSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="false"
+            android:layout_marginStart="138dp"
+            android:layout_marginLeft="138dp"
+            android:layout_marginTop="636dp"
+            android:layout_marginRight="152dp"
+            android:background="@drawable/rectangle38"
+            app:srcCompat="@drawable/save" />
 
 
     </RelativeLayout>
