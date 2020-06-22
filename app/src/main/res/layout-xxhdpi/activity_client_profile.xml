@@ -9,7 +9,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ClientProfile"
-    android:background="@drawable/gradient_backgroud">
+    android:background="#020035">
 
 
 
@@ -17,23 +17,6 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="800dp">
-
-        <ImageButton
-            android:id="@+id/btnHelpC"
-            android:layout_width="155dp"
-            android:layout_height="190dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="false"
-            android:layout_marginStart="26dp"
-            android:layout_marginLeft="26dp"
-            android:layout_marginTop="750dp"
-            android:layout_marginRight="230dp"
-            android:layout_marginBottom="119dp"
-            android:background="@drawable/rectangle17"
-            app:srcCompat="@drawable/help" />
 
         <ImageButton
             android:id="@+id/btnEditProfileC"
@@ -104,7 +87,7 @@
             app:srcCompat="@drawable/notification" />
 
         <ImageButton
-            android:id="@+id/btnSettingsC"
+            android:id="@+id/btnHelpC"
             android:layout_width="155dp"
             android:layout_height="190dp"
             android:layout_alignParentStart="true"
@@ -112,18 +95,18 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="false"
-            android:layout_marginStart="225dp"
-            android:layout_marginLeft="225dp"
-            android:layout_marginTop="749dp"
-            android:layout_marginRight="31dp"
+            android:layout_marginStart="33dp"
+            android:layout_marginLeft="33dp"
+            android:layout_marginTop="750dp"
+            android:layout_marginRight="223dp"
             android:layout_marginBottom="119dp"
             android:background="@drawable/rectangle17"
-            app:srcCompat="@drawable/settings" />
+            app:srcCompat="@drawable/help" />
 
         <ImageView
             android:id="@+id/imageView30"
-            android:layout_width="428dp"
-            android:layout_height="321dp"
+            android:layout_width="417dp"
+            android:layout_height="372dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
@@ -131,9 +114,40 @@
             android:layout_alignParentBottom="false"
             android:layout_marginStart="-7dp"
             android:layout_marginLeft="-7dp"
-            android:layout_marginTop="-26dp"
-            android:layout_marginRight="-1dp"
-            app:srcCompat="@drawable/galaxywallpaper" />
+            android:layout_marginTop="-53dp"
+            android:layout_marginRight="2dp"
+            app:srcCompat="@drawable/cityblurred" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profilepic"
+            android:layout_width="159dp"
+            android:layout_height="166dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="false"
+            android:layout_marginStart="131dp"
+            android:layout_marginLeft="131dp"
+            android:layout_marginTop="34dp"
+            android:layout_marginRight="121dp"
+            android:src="@drawable/noprofile" />
+
+        <ImageButton
+            android:id="@+id/btnLogoutC"
+            android:layout_width="155dp"
+            android:layout_height="190dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="false"
+            android:layout_marginStart="233dp"
+            android:layout_marginLeft="233dp"
+            android:layout_marginTop="752dp"
+            android:layout_marginRight="23dp"
+            android:background="@drawable/rectangle17"
+            app:srcCompat="@drawable/bluepower" />
 
 
     </RelativeLayout>

@@ -49,9 +49,9 @@
 
     <ImageButton
         android:id="@+id/btnLogin1"
-        android:layout_width="169dp"
-        android:layout_height="40dp"
-        android:background="@drawable/rectangle1"
+        android:layout_width="160dp"
+        android:layout_height="35dp"
+        android:background="@drawable/btn"
         android:contentDescription="@string/todo4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -62,14 +62,14 @@
 
     <ImageButton
         android:id="@+id/btnSignUp"
-        android:layout_width="171dp"
-        android:layout_height="45dp"
-        android:background="@drawable/rectangle1"
+        android:layout_width="160dp"
+        android:layout_height="35dp"
+        android:background="@drawable/btn"
         android:contentDescription="@string/todo5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.92"
+        app:layout_constraintVertical_bias="0.9"
         app:srcCompat="@drawable/signup" />
 </androidx.constraintlayout.widget.ConstraintLayout>

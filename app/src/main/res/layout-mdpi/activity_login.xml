@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ClientProfile"
+    android:background="@drawable/landingpage">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="600dp">
+
+        <ImageView
+            android:id="@+id/imageView27"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="false"
+            android:layout_marginStart="-4dp"
+            android:layout_marginLeft="-4dp"
+            android:layout_marginTop="-880dp"
+            android:layout_marginRight="3dp"
+            app:srcCompat="@drawable/zebra" />
+
+        <EditText
+            android:id="@+id/txtMail4"
+            android:layout_width="180dp"
+            android:layout_height="35dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="false"
+            android:layout_marginStart="85dp"
+            android:layout_marginLeft="85dp"
+            android:layout_marginTop="178dp"
+            android:layout_marginRight="45dp"
+            android:autofillHints=""
+            android:background="@drawable/white"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Email Address"
+            android:inputType="textPersonName"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+        <ImageView
+            android:id="@+id/imageView23"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="false"
+            android:layout_marginStart="44dp"
+            android:layout_marginLeft="44dp"
+            android:layout_marginTop="177dp"
+            android:layout_marginRight="241dp"
+            android:contentDescription="@string/todo20"
+            app:srcCompat="@drawable/ic_mail"
+            tools:ignore="VectorDrawableCompat" />
+
+        <ImageView
+            android:id="@+id/imageView21"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="false"
+            android:layout_marginStart="47dp"
+            android:layout_marginLeft="47dp"
+            android:layout_marginTop="251dp"
+            android:layout_marginRight="238dp"
+            android:contentDescription="@string/todo19"
+            app:srcCompat="@drawable/ic_code" />
+
+        <EditText
+            android:id="@+id/txtPassword"
+            android:layout_width="180dp"
+            android:layout_height="35dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="false"
+            android:layout_marginStart="86dp"
+            android:layout_marginLeft="86dp"
+            android:layout_marginTop="250dp"
+            android:layout_marginRight="44dp"
+            android:autofillHints=""
+            android:background="@drawable/white"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+        <ImageView
+            android:id="@+id/imageView24"
+            android:layout_width="238dp"
+            android:layout_height="191dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="false"
+            android:layout_marginStart="-102dp"
+            android:layout_marginLeft="-102dp"
+            android:layout_marginTop="374dp"
+            android:layout_marginRight="184dp"
+            android:layout_marginBottom="106dp"
+            android:contentDescription="@string/todo21"
+            app:srcCompat="@drawable/splatter" />
+
+        <ProgressBar
+            android:id="@+id/loading"
+            android:layout_width="370dp"
+            android:layout_height="60dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="false"
+            android:layout_marginStart="18dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="410dp"
+            android:layout_marginRight="-18dp"
+            android:visibility="gone" />
+
+        <ImageButton
+            android:id="@+id/btnLogin2"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="false"
+            android:layout_marginStart="88dp"
+            android:layout_marginLeft="88dp"
+            android:layout_marginTop="352dp"
+            android:layout_marginRight="82dp"
+            android:background="@drawable/btn"
+            app:srcCompat="@drawable/login" />
+
+        <TextView
+            android:id="@+id/txtSignUpL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="false"
+            android:layout_marginStart="199dp"
+            android:layout_marginLeft="199dp"
+            android:layout_marginTop="415dp"
+            android:layout_marginRight="7dp"
+            android:text="Register Account"
+            android:textColor="#ffff"
+            android:textSize="15dp"
+            android:textStyle="italic" />
+
+
+    </RelativeLayout>
+</ScrollView>

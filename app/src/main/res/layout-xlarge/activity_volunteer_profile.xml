@@ -9,7 +9,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ClientProfile"
-    android:background="@drawable/gradient_backgroud">
+    android:background="#020035">
 
 
 
@@ -70,23 +70,6 @@
             app:srcCompat="@drawable/browse" />
 
         <ImageButton
-            android:id="@+id/btnSettingsV"
-            android:layout_width="190dp"
-            android:layout_height="230dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="false"
-            android:layout_marginStart="584dp"
-            android:layout_marginLeft="584dp"
-            android:layout_marginTop="883dp"
-            android:layout_marginRight="26dp"
-            android:layout_marginBottom="119dp"
-            android:background="@drawable/rectangle17"
-            app:srcCompat="@drawable/settings" />
-
-        <ImageButton
             android:id="@+id/btnHelpV"
             android:layout_width="190dp"
             android:layout_height="230dp"
@@ -133,8 +116,38 @@
             android:layout_marginLeft="-7dp"
             android:layout_marginTop="-26dp"
             android:layout_marginRight="0dp"
-            app:srcCompat="@drawable/galaxywallpaper" />
+            app:srcCompat="@drawable/cityblurred" />
 
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profilepic"
+            android:layout_width="279dp"
+            android:layout_height="303dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="false"
+            android:layout_marginStart="284dp"
+            android:layout_marginLeft="284dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginRight="237dp"
+            android:src="@drawable/noprofile" />
+
+        <ImageButton
+            android:id="@+id/btnLogout"
+            android:layout_width="190dp"
+            android:layout_height="230dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="false"
+            android:layout_marginStart="582dp"
+            android:layout_marginLeft="582dp"
+            android:layout_marginTop="881dp"
+            android:layout_marginRight="28dp"
+            android:background="@drawable/rectangle17"
+            app:srcCompat="@drawable/bluepower" />
 
     </RelativeLayout>
 </ScrollView>
