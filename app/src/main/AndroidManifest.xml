@@ -4,6 +4,12 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <supports-screens
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,17 +17,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ClientProfile"></activity>
-        <activity android:name=".SignUpC" />
-        <activity android:name=".EditProfile" />
-        <activity android:name=".VolunteerProfile" />
+        <activity android:name=".EditProfileC"></activity>
         <activity
-            android:name=".ui.login.LoginActivity"
-            android:label="@string/title_activity_login" />
-        <activity android:name=".Login" />
-        <activity android:name=".SignUp2" />
-        <activity android:name=".SignUp" />
-        <activity android:name=".LandingPage">
+            android:name=".ClientProfile"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SignUpC"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".EditProfile"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".VolunteerProfile"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Login"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SignUp2"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SignUp"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LandingPage"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
