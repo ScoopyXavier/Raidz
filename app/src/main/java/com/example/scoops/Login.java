@@ -28,23 +28,28 @@ import java.util.Map;
 
 public class Login extends AppCompatActivity {
     //LOGIN
+    public static String ss_name, ss_email;
     private EditText Password, Email;
-    private ImageButton Login;
+    private ImageButton login;
     private ProgressBar loading;
-    private String URL_LOGIN = "https://lamp.ms.wits.ac.za/~s1445435/login2.php";
+    SessionManager sessionManager;
+    private static String URL_LOGIN = "https://lamp.ms.wits.ac.za/~s1445435/loginF.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        sessionManager = new SessionManager(this);
+
         //LOGIN
         Password = findViewById(R.id.txtPassword);
-        Email = findViewById(R.id.txtMail2);
-        Login = findViewById(R.id.btnLogin2);
+        Email = findViewById(R.id.txtMail4);
+        login = findViewById(R.id.btnLogin2);
         loading = findViewById(R.id.loading);
+        TextView registerL =  findViewById(R.id.txtSignUpL);
 
-        Login.setOnClickListener(new View.OnClickListener() {
+        login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -66,98 +71,103 @@ public class Login extends AppCompatActivity {
             }
         });
 
+        registerL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), SignUp.class));
+            }
+        });
     }
 
     //LOGIN
     private void Login(final String email, final String password){
         loading.setVisibility(View.VISIBLE);
-        Login.setVisibility(View.GONE);
-
-        final String Email = this.Email.getText().toString().trim();
-        final String Password = this.Password.getText().toString().trim();
+        login.setVisibility(View.GONE);
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_LOGIN, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            String success = jsonObject.getString("success");
+                            JSONArray jsonArray = jsonObject.getJSONArray("login");
 
-                if (response.contains("1")) {
-                    startActivity(new Intent(getApplicationContext(), VolunteerProfile.class));
-                } else {
-                    Toast.makeText(getApplicationContext(), "Wrong Username or Password!", Toast.LENGTH_SHORT).show();
-                }
-                loading.setVisibility(View.GONE);
-                Login.setVisibility(View.VISIBLE);
-            }
-        },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        loading.setVisibility(View.GONE);
-                        Login.setVisibility(View.VISIBLE);
-                    }
-                })
-        {
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String, String> params = new HashMap<>();
+                            if (success.equals("1")) {
+                                for (int i = 0; i < jsonArray.length(); ++i) {
+                                    JSONObject object = jsonArray.getJSONObject(i);
 
-                params.put("Email", Email);
-                params.put("Password", Password);
+                                    String name = object.getString("Name").trim();
+                                    String ID = object.getString("ID").trim();
+                                    String email = object.getString("Email").trim();
 
-                return params;
-            }
-        };
+                                    sessionManager.createSession(name, email);
 
-        //Alternative Garbage
-        /*StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_LOGIN, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                loading.setVisibility(View.GONE);
-                Login.setVisibility(View.VISIBLE);
-                try {
-                    JSONObject jsonObject = new JSONObject(response);
-                    String success = jsonObject.getString("success");
-                    JSONArray jsonArray = jsonObject.getJSONArray("Login");
+                                    Toast.makeText(Login.this, "Hello " + name + "!", Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(Login.this, VolunteerProfile.class);
+                                    intent.putExtra("Name",  name);
+                                    intent.putExtra("Email", email);
+                                    startActivity(intent);
 
-                    if (success.equals("1")) {
-                        for (int i = 0; i < jsonArray.length(); i++) {
-                            JSONObject object = jsonArray.getJSONObject(i);
+                                    loading.setVisibility(View.GONE);
 
-                            String Fname = object.getString("Fname").trim();
-                            String Lname = object.getString("Lname").trim();
+                                    //startActivity(new Intent(getApplicationContext(), VolunteerProfile.class));
+                                    //finish();
 
-                            Toast.makeText(Login.this, "Hello! " + Fname + " " + Lname, Toast.LENGTH_SHORT).show();
+                                }
+
+                            }
+                            else if (success.equals("2")){
+                                for (int i = 0; i < jsonArray.length(); ++i) {
+                                    JSONObject object = jsonArray.getJSONObject(i);
+
+                                    String name = object.getString("Name").trim();
+                                    String ID = object.getString("ID").trim();
+                                    String email = object.getString("Email").trim();
+
+                                    sessionManager.createSession(name, email);
+
+                                    Toast.makeText(Login.this, "Hello " + name + "!", Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(Login.this, ClientProfile.class);
+                                    intent.putExtra("Name",  name);
+                                    intent.putExtra("Email", email);
+                                    startActivity(intent);
+
+                                    loading.setVisibility(View.GONE);
+
+                                    //startActivity(new Intent(getApplicationContext(), ClientProfile.class));
+                                    //finish();
+
+                                }
+
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                            Toast.makeText(Login.this, "Wrong Username or Password!" , Toast.LENGTH_SHORT).show();
+                            loading.setVisibility(View.GONE);
+                            login.setVisibility(View.VISIBLE);
                         }
                     }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                    Toast.makeText(Login.this, "Error " + e.toString(), Toast.LENGTH_SHORT).show();
-                    loading.setVisibility(View.GONE);
-                    Login.setVisibility(View.VISIBLE);
-                }
-            }
-        },
-                new Response.ErrorListener() {
+                },
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                Toast.makeText(Login.this, "Wrong Username or Password!" , Toast.LENGTH_SHORT).show();
+                                loading.setVisibility(View.GONE);
+                                login.setVisibility(View.VISIBLE);
+                            }
+                        })
+                {
                     @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(Login.this, "Error " + error.toString(), Toast.LENGTH_SHORT).show();
-                        loading.setVisibility(View.GONE);
-                        Login.setVisibility(View.VISIBLE);
+                    protected Map<String, String> getParams() throws AuthFailureError {
+                        Map<String, String> params = new HashMap<>();
+
+                        params.put("Email", email);
+                        params.put("Password", password);
+
+                        return params;
                     }
-                })
-        {
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String, String> params = new HashMap<>();
-
-                params.put("Email", Email);
-                params.put("Password", Password);
-
-                return params;
-            }
-        };*/
-
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-        requestQueue.add(stringRequest);
+                };
+                RequestQueue requestQueue = Volley.newRequestQueue(this);
+                requestQueue.add(stringRequest);
     }
 }

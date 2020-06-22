@@ -38,8 +38,8 @@ import java.util.Map;
 public class SignUp2 extends AppCompatActivity {
 
     //Registration
-    private EditText Fname, Lname, Email, Password, Confirm;
-    private String s_Fname, s_Lname, s_Email, s_Password;
+    private EditText Name, Email, Password, Confirm;
+    private String s_Name, s_Email, s_Password;
     private CheckBox peek, peek2;
     private ImageButton register;
     private ProgressBar loading;
@@ -54,8 +54,7 @@ public class SignUp2 extends AppCompatActivity {
 
         //Registration
         loading = findViewById(R.id.loading);
-        Fname = findViewById(R.id.txtFirst);
-        Lname = findViewById(R.id.txtLast);
+        Name = findViewById(R.id.txtName);
         Email = findViewById(R.id.txtMail);
         Password = findViewById(R.id.txtCreate);
         Confirm = findViewById(R.id.txtConfirm);
@@ -67,21 +66,21 @@ public class SignUp2 extends AppCompatActivity {
             public void onClick(View v) {
 
                 String s_email = Email.getText().toString().trim();
-                String s_Fname = Fname.getText().toString().trim();
-                String s_Lname = Lname.getText().toString().trim();
+                String s_Name = Name.getText().toString().trim();
                 String s_Confirm = Confirm.getText().toString().trim();
                 String s_password = Password.getText().toString().trim();
 
                 //Disallow Continuation when text_box empty
-                if (!s_Fname.isEmpty() && !s_Lname.isEmpty() && !s_Confirm.isEmpty() && !s_email.isEmpty() && !s_password.isEmpty()){
-                    Registration(s_Fname, s_Lname, s_email, s_password, s_Confirm);
+                if (!s_Name.isEmpty() && !s_Confirm.isEmpty() && !s_email.isEmpty() && !s_password.isEmpty() &&  s_password.equals(s_Confirm)){
+                    Registration(s_Name, s_email, s_password, s_Confirm);
                 }
                 else {
-                    if (s_Fname.isEmpty()) {
-                        Fname.setError("Please Enter Your First Name");
+                    if(s_Confirm != s_password){
+                        Confirm.setError("Passwords do not match");
+                        Password.setError("Passwords do not match");
                     }
-                    if (s_Lname.isEmpty()) {
-                        Lname.setError("Please Enter Your Last Name");
+                    if (s_Name.isEmpty()) {
+                        Name.setError("Please Enter Your First Name");
                     }
                     if (s_email.isEmpty()) {
                         Email.setError("Please Enter Your Email Address");
@@ -124,13 +123,11 @@ public class SignUp2 extends AppCompatActivity {
     }
 
     //Registration
-    private void Registration(final String fname, final String lname, final String email, final String password, final String confirm) {
+    private void Registration(final String name, final String email, final String password, final String confirm) {
 
         //Disallow Continuation when text_box empty
-        if (Fname.getText().toString().equals("")) {
-            Toast.makeText(this, "Please Enter Your First Name", Toast.LENGTH_SHORT).show();
-        } else if (Lname.getText().toString().equals("")) {
-            Toast.makeText(this, "Please Enter Your Last Name", Toast.LENGTH_SHORT).show();
+        if (Name.getText().toString().equals("")) {
+            Toast.makeText(this, "Please Enter Your Full Name", Toast.LENGTH_SHORT).show();
         } else if (Email.getText().toString().equals("")) {
             Toast.makeText(this, "Please Enter Your Email Address", Toast.LENGTH_SHORT).show();
         } else if (Password.getText().toString().equals("")) {
@@ -141,18 +138,25 @@ public class SignUp2 extends AppCompatActivity {
             loading.setVisibility(View.VISIBLE);
             register.setVisibility(View.GONE);
 
-            s_Fname = this.Fname.getText().toString().trim();
-            s_Lname = this.Lname.getText().toString().trim();
+            s_Name = this.Name.getText().toString().trim();
             s_Email = this.Email.getText().toString().trim();
             s_Password = this.Password.getText().toString().trim();
 
             StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_REG, new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
-                    Toast.makeText(SignUp2.this, response, Toast.LENGTH_SHORT).show();
                     loading.setVisibility(View.GONE);
                     register.setVisibility(View.VISIBLE);
-                    startActivity(new Intent(getApplicationContext(), VolunteerProfile.class));
+
+                    if(response.contains("The Email address is already registered. Choose a different Email address or Login")){
+                        Toast.makeText(SignUp2.this, response, Toast.LENGTH_SHORT).show();
+                        Email.setError("Already Registered");
+                    }
+                    else {
+                        Toast.makeText(SignUp2.this, response, Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(getApplicationContext(), VolunteerProfile.class));
+                        finish();
+                    }
                 }
 
             },
@@ -167,8 +171,7 @@ public class SignUp2 extends AppCompatActivity {
                 @Override
                 protected Map<String, String> getParams() throws AuthFailureError {
                     Map<String, String> params = new HashMap<>();
-                    params.put("Fname", s_Fname);
-                    params.put("Lname", s_Lname);
+                    params.put("Name", s_Name);
                     params.put("Email", s_Email);
                     params.put("Password", s_Password);
 

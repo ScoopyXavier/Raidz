@@ -33,6 +33,7 @@ public class LandingPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 openLogin2();
+                finish();
             }
         });
     }
