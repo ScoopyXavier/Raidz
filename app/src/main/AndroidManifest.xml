@@ -2,7 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.scoops">
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <supports-screens
         android:largeScreens="true"
@@ -16,8 +18,20 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".EditProfileC"></activity>
+        android:theme="@style/customTheme">
+        <activity android:name=".VolDetails"></activity>
+        <activity android:name=".AcceptedInfo" />
+        <activity android:name=".RequestAccepted" />
+        <activity android:name=".RequestCardAdapter" />
+        <activity android:name=".RequestInfo" />
+        <activity android:name=".RequestFeed" />
+        <activity android:name=".NotificationActivity_C" />
+        <activity android:name=".NotificationActivity" />
+        <activity android:name=".HistoryActivity" />
+        <activity android:name=".HistoryActivity_C" />
+        <activity android:name=".PostRequest" />
+        <activity android:name=".RequestActivity" />
+        <activity android:name=".EditProfileC" />
         <activity
             android:name=".ClientProfile"
             android:screenOrientation="portrait" />
@@ -48,6 +62,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <receiver
+            android:name=".BackgroundRun"
+            android:enabled="true" />
     </application>
 
 </manifest>
