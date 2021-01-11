@@ -4,7 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.style.UnderlineSpan;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
@@ -26,13 +29,24 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.example.scoops.VolDetails.v_email;
+import static com.example.scoops.BackgroundRun.b_email;
+import static com.example.scoops.RequestAccepted.emailV;
+import static com.example.scoops.RequestActivity.sum_email;
+import static com.example.scoops.RequestActivity.sum_name;
+import static com.example.scoops.SessionManager.EMAIL;
+import static com.example.scoops.NotificationActivity_C.c_email;
+
 public class Login extends AppCompatActivity {
     //LOGIN
-    public static String ss_name, ss_email;
+    public static String ss_name, ss_email, r_name, r_email, r_phone, r_id;
+    //public static int r_id;
     private EditText Password, Email;
     private ImageButton login;
     private ProgressBar loading;
+    public static String Vemail;
     SessionManager sessionManager;
+    SessionManager_C sessionManager_c;
     private static String URL_LOGIN = "https://lamp.ms.wits.ac.za/~s1445435/loginF.php";
 
     @Override
@@ -41,6 +55,11 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         sessionManager = new SessionManager(this);
+        sessionManager_c = new SessionManager_C(this);
+
+        //Hide status bar
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
 
         //LOGIN
         Password = findViewById(R.id.txtPassword);
@@ -71,12 +90,30 @@ public class Login extends AppCompatActivity {
             }
         });
 
+        //GO TO SIGN UP (NO ACCOUNT)
         registerL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), SignUp.class));
             }
         });
+
+        SpannableString content = new SpannableString("Register Account");
+        content.setSpan(new UnderlineSpan(), 0, content.length(), 0);
+        registerL.setText(content);
+
+        /*if (EMAIL != null || !EMAIL.equals("")){
+            Intent intent = new Intent(Login.this, VolunteerProfile.class);
+            startActivity(intent);
+            killActivity();
+        }
+
+        if (EMAIL_C != null || !EMAIL_C.equals("")){
+            Intent intent = new Intent(Login.this, ClientProfile.class);
+            startActivity(intent);
+            killActivity();
+        }*/
+
     }
 
     //LOGIN
@@ -98,20 +135,25 @@ public class Login extends AppCompatActivity {
 
                                     String name = object.getString("Name").trim();
                                     String ID = object.getString("ID").trim();
-                                    String email = object.getString("Email").trim();
+                                    Vemail = object.getString("Email").trim();
 
-                                    sessionManager.createSession(name, email);
+                                    emailV = Vemail;
+
+                                    sessionManager.createSession(name, Vemail, ID);
 
                                     Toast.makeText(Login.this, "Hello " + name + "!", Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(Login.this, VolunteerProfile.class);
                                     intent.putExtra("Name",  name);
                                     intent.putExtra("Email", email);
                                     startActivity(intent);
+                                    killActivity();
+
 
                                     loading.setVisibility(View.GONE);
 
                                     //startActivity(new Intent(getApplicationContext(), VolunteerProfile.class));
-                                    //finish();
+
+
 
                                 }
 
@@ -124,18 +166,22 @@ public class Login extends AppCompatActivity {
                                     String ID = object.getString("ID").trim();
                                     String email = object.getString("Email").trim();
 
-                                    sessionManager.createSession(name, email);
+
+                                    sessionManager_c.createSessionC(name, email, ID);
 
                                     Toast.makeText(Login.this, "Hello " + name + "!", Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(Login.this, ClientProfile.class);
                                     intent.putExtra("Name",  name);
                                     intent.putExtra("Email", email);
                                     startActivity(intent);
+                                    killActivity();
+
+                                    r_name = name; r_email = email; r_id = ID; c_email = email; sum_email = email; sum_name = name; b_email = email; v_email = email;
 
                                     loading.setVisibility(View.GONE);
 
                                     //startActivity(new Intent(getApplicationContext(), ClientProfile.class));
-                                    //finish();
+
 
                                 }
 
@@ -167,7 +213,12 @@ public class Login extends AppCompatActivity {
                         return params;
                     }
                 };
+
+
                 RequestQueue requestQueue = Volley.newRequestQueue(this);
                 requestQueue.add(stringRequest);
+    }
+    private void killActivity() {
+        finish();
     }
 }

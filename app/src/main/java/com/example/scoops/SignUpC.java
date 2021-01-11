@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
@@ -39,6 +40,10 @@ public class SignUpC extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up_c);
         register = findViewById(R.id.btnRegister2);
+
+        //Hide status bar
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
 
         //Registration/
         loading = findViewById(R.id.loading);
@@ -148,7 +153,7 @@ public class SignUpC extends AppCompatActivity {
                     }
                     else{
                         Toast.makeText(SignUpC.this, response, Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(getApplicationContext(), ClientProfile.class));
+                        startActivity(new Intent(getApplicationContext(), Login.class));
                         finish();
                     }
 

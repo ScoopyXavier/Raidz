@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.DatePicker;
@@ -51,6 +52,10 @@ public class SignUp2 extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up2);
 
         register = findViewById(R.id.btnRegister);
+
+        //Hide status bar
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
 
         //Registration
         loading = findViewById(R.id.loading);
@@ -154,7 +159,7 @@ public class SignUp2 extends AppCompatActivity {
                     }
                     else {
                         Toast.makeText(SignUp2.this, response, Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(getApplicationContext(), VolunteerProfile.class));
+                        startActivity(new Intent(getApplicationContext(), Login.class));
                         finish();
                     }
                 }
