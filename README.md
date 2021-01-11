@@ -5,8 +5,8 @@ This app was inspired by the current unfortunate living conditions of the corona
 
 # App Demo
 
-![alt text]()
-![alt text]()
+![alt text](https://github.com/XavierCharlie/Raidz/blob/master/BeFunky-collage1.jpg)
+![alt text](https://github.com/XavierCharlie/Raidz/blob/master/BeFunky-collage2.jpg)
 
 
 # I have also uploaded a demo video with the files
