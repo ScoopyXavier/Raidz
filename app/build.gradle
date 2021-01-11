@@ -3,6 +3,10 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 
     defaultConfig {
         applicationId "com.example.scoops"
@@ -10,6 +14,7 @@ android {
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -23,10 +28,19 @@ android {
         }
     }
 
+    packagingOptions{
+        exclude 'META-INF/rxjava.properties'
+    }
+
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation 'com.android.support:multidex:1.0.3'
+
 
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
@@ -41,5 +55,38 @@ dependencies {
     implementation 'com.android.support:design:27.1.0'
     implementation 'com.android.volley:volley:1.1.0'
     implementation 'de.hdodenhof:circleimageview:2.2.0'
+    //Butter knife
+    implementation 'com.jakewharton:butterknife:10.2.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
+
+    //Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    //very handy when were seeing what kind of data were getting from the database
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.8.0'
+
+    // circular imageview
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
+
+    // Picasso
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    // Image Picker, Compressoor and easy permission dependices
+    implementation 'pub.devrel:easypermissions:1.2.0'
+    implementation 'com.github.esafirm.android-image-picker:imagepicker:2.3.0'
+    implementation 'com.github.esafirm.android-image-picker:rximagepicker:2.3.0'
+    implementation 'com.github.bumptech.glide:glide:4.5.0'
+    implementation 'id.zelory:compressor:2.1.0'
+
+    //for adding zooming to imageveiw
+    implementation 'com.github.chrisbanes:PhotoView:2.1.3'
+
+    // Parcels
+    implementation 'org.parceler:parceler-api:1.1.12'
+    annotationProcessor 'org.parceler:parceler:1.1.12'
+
+    //Location services
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
 }
 
