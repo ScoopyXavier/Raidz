@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="imageView16" type="id"></item>
+    <item name="appBarLayout2" type="id"></item>
+    <item name="bottom_navigation" type="id"></item>
+</resources>

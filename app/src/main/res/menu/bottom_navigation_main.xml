@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/nb_home"
+        android:enabled="true"
+        android:icon="@drawable/ic_home_2"
+        android:title="Home"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/nb_request"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_post_add_24"
+        android:title="Request"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/nb_notifications"
+        android:enabled="true"
+        android:icon="@drawable/notification2"
+        android:title="Notifications"
+        app:showAsAction="ifRoom" />
+
+        android:id="@+id/explore_notification"
+        android:enabled="true"
+        android:icon="@drawable/icon_notification"
+        android:title="Notification"
+        app:showAsAction="ifRoom" />-->
+</menu>

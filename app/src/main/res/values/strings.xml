@@ -53,4 +53,14 @@
     <string name="todo29">TODO</string>
     <string name="todo30">TODO</string>
     <string name="action_settings" />
+    <string name="check_status">Check Status</string>
+    <string name="sorry_your_request_has_not_been_accepted_by_a_volunteer_thank_you_for_you_patince">Sorry your request has not been accepted by a volunteer, thank you for you patince</string>
+    <string name="your_request_has_been_accepted_a_volunteer_is_on_their_way">Your request has been accepted a volunteer is on their way</string>
+    <string name="you_have_no_notifications">You have no Notifications</string>
+    <string name="todo39">TODO</string>
+
+    <string name="str_register">
+        This is an <u>underline</u>.
+    </string>
+
 </resources>
