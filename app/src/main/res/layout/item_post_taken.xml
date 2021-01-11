@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:elevation="5dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:layout_margin="5dp"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/memory_meta_rel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFF">
+
+            <ImageView
+                android:id="@+id/people_image"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/noprofile"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="5dp" />
+
+            <TextView
+                android:id="@+id/user_name_t"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@+id/people_image"
+                android:text="Name"
+                android:textColor="#000"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_toRightOf="@+id/people_image" />
+
+
+            <TextView
+                android:id="@+id/txtAccepted"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginEnd="34dp"
+                android:layout_marginRight="34dp"
+                android:text="Accepted"
+                android:textColor="#006400"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginEnd="7dp"
+                android:layout_marginRight="7dp"
+                app:srcCompat="@drawable/tick" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/location_t"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:layout_below="@id/memory_meta_rel"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="2dp"
+            android:gravity="start"
+            android:paddingStart="16dp"
+            android:paddingLeft="16dp"
+            android:text="Location"
+            android:textColor="#000"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:ignore="RtlSymmetry" />
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/post"
+            android:layout_margin="0dp"
+            android:adjustViewBounds="true"
+            android:padding="0dp"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="116dp">
+
+            <TextView
+                android:id="@+id/f_items"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/memory_meta_rel"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="2dp"
+                android:gravity="start"
+                android:paddingStart="16dp"
+                android:paddingLeft="16dp"
+                android:text="LIST"
+                android:textColor="#000"
+                android:textSize="14sp"
+                tools:ignore="RtlSymmetry" />
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="false"
+            android:layout_marginBottom="5dp"
+            android:background="#FFF"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:weightSum="2">
+
+
+            <LinearLayout
+                android:id="@+id/btnfinishDel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/del_img"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:background="#fff"
+                    app:srcCompat="@drawable/ic_deliverygreen" />
+
+
+                <TextView
+                    android:id="@+id/take_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Complete Delivery"
+                    android:textColor="#008039"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/btnViewDetails_T"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/view_img"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/ic_viewgreen" />
+
+                <TextView
+                    android:id="@+id/txtViewDetails"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="View Details"
+                    android:textColor="#008039"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:textSize="12sp" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

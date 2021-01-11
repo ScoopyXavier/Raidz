@@ -160,12 +160,12 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="false"
-            android:layout_marginStart="232dp"
-            android:layout_marginLeft="232dp"
-            android:layout_marginTop="517dp"
-            android:layout_marginRight="69dp"
+            android:layout_marginStart="168dp"
+            android:layout_marginLeft="168dp"
+            android:layout_marginTop="513dp"
+            android:layout_marginRight="133dp"
             android:text="Register Account"
-            android:textColor="#ffff"
+            android:textColor="#fff"
             android:textSize="15dp"
             android:textStyle="italic" />
 

@@ -118,21 +118,6 @@
             android:layout_marginRight="3dp"
             app:srcCompat="@drawable/cityblurred" />
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/profilepic"
-            android:layout_width="130dp"
-            android:layout_height="132dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="false"
-            android:layout_marginStart="97dp"
-            android:layout_marginLeft="97dp"
-            android:layout_marginTop="19dp"
-            android:layout_marginRight="93dp"
-            android:src="@drawable/noprofile" />
-
         <ImageButton
             android:id="@+id/btnLogout"
             android:layout_width="125dp"

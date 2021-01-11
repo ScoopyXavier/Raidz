@@ -150,6 +150,7 @@
             android:layout_marginRight="246dp"
             android:background="@drawable/btn"
             app:srcCompat="@drawable/login" />
+
         <TextView
             android:id="@+id/txtSignUpL"
             android:layout_width="wrap_content"
@@ -159,12 +160,12 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="false"
-            android:layout_marginStart="189dp"
-            android:layout_marginLeft="189dp"
-            android:layout_marginTop="472dp"
-            android:layout_marginRight="12dp"
+            android:layout_marginStart="358dp"
+            android:layout_marginLeft="358dp"
+            android:layout_marginTop="884dp"
+            android:layout_marginRight="662dp"
             android:text="Register Account"
-            android:textColor="#ffff"
+            android:textColor="#fff"
             android:textSize="15dp"
             android:textStyle="italic" />
 

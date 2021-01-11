@@ -18,7 +18,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.16"
+        app:layout_constraintVertical_bias="0.339"
         app:srcCompat="@drawable/helping" />
 
     <ImageView
@@ -31,45 +31,20 @@
         app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.038"
+        app:layout_constraintVertical_bias="0.108"
         app:srcCompat="@drawable/welcome" />
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:contentDescription="@string/todo3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.667"
-        app:srcCompat="@drawable/discover"
-        android:contentDescription="@string/todo3" />
+        app:layout_constraintVertical_bias="0.725"
+        app:srcCompat="@drawable/discover" />
 
-    <ImageButton
-        android:id="@+id/btnLogin1"
-        android:layout_width="154dp"
-        android:layout_height="34dp"
-        android:background="@drawable/btn"
-        android:contentDescription="@string/todo4"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.811"
-        app:srcCompat="@drawable/login" />
-
-    <ImageButton
-        android:id="@+id/btnSignUp"
-        android:layout_width="154dp"
-        android:layout_height="34dp"
-        android:background="@drawable/btn"
-        android:contentDescription="@string/todo5"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.921"
-        app:srcCompat="@drawable/signup" />
 </androidx.constraintlayout.widget.ConstraintLayout>

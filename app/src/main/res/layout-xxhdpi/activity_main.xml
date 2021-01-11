@@ -12,64 +12,40 @@
         android:id="@+id/imageView"
         android:layout_width="362dp"
         android:layout_height="594dp"
+        android:contentDescription="@string/todo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.457"
+        app:layout_constraintHorizontal_bias="0.571"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/helping"
-        android:contentDescription="@string/todo" />
+        app:layout_constraintVertical_bias="0.394"
+        app:srcCompat="@drawable/helping" />
+
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="421dp"
         android:layout_height="176dp"
+        android:contentDescription="@string/todo2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.285"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.054"
-        app:srcCompat="@drawable/welcome"
-        android:contentDescription="@string/todo2" />
+        app:layout_constraintVertical_bias="0.151"
+        app:srcCompat="@drawable/welcome" />
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:contentDescription="@string/todo3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.667"
-        app:srcCompat="@drawable/discover"
-        android:contentDescription="@string/todo3" />
+        app:layout_constraintVertical_bias="0.75"
+        app:srcCompat="@drawable/discover" />
 
-    <ImageButton
-        android:id="@+id/btnLogin1"
-        android:layout_width="170dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/btn"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.811"
-        app:srcCompat="@drawable/login"
-        android:contentDescription="@string/todo4" />
-
-    <ImageButton
-        android:id="@+id/btnSignUp"
-        android:layout_width="170dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/btn"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.92"
-        app:srcCompat="@drawable/signup"
-        android:contentDescription="@string/todo5" />
 </androidx.constraintlayout.widget.ConstraintLayout>

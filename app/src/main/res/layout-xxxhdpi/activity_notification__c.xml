@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NotificationActivity_C"
+    android:background="#fff">
+
+    <Button
+        android:id="@+id/check"
+        android:layout_width="238dp"
+        android:layout_height="68dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="86dp"
+        android:layout_marginRight="86dp"
+        android:layout_marginBottom="133dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#fff"
+        android:background="#000"
+        android:text="@string/check_status" />
+
+    <ImageView
+        android:id="@+id/bubble"
+        android:layout_width="match_parent"
+        android:layout_height="322dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="407dp"
+        app:srcCompat="@drawable/bubble"
+        android:contentDescription="@string/todo39" />
+
+    <TextView
+        android:id="@+id/notAccepted"
+        android:layout_width="303dp"
+        android:layout_height="141dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="63dp"
+        android:layout_marginLeft="63dp"
+        android:layout_marginTop="171dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginRight="45dp"
+        android:layout_marginBottom="511dp"
+        android:gravity="center"
+        android:text="Sorry, your request has not been accepted by a volunteer"
+        android:textColor="#000"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/accepted"
+        android:layout_width="290dp"
+        android:layout_height="136dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="66dp"
+        android:layout_marginLeft="66dp"
+        android:layout_marginTop="171dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginRight="55dp"
+        android:layout_marginBottom="516dp"
+        android:gravity="center"
+        android:text="@string/your_request_has_been_accepted_a_volunteer_is_on_their_way"
+        android:textColor="#000"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/noNot"
+        android:layout_width="250dp"
+        android:layout_height="153dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="87dp"
+        android:layout_marginLeft="87dp"
+        android:layout_marginTop="171dp"
+        android:layout_marginEnd="74dp"
+        android:layout_marginRight="74dp"
+        android:layout_marginBottom="499dp"
+        android:gravity="center"
+        android:text="@string/you_have_no_notifications"
+        android:textColor="#000"
+        android:textSize="30sp"
+        android:visibility="visible"
+        android:textStyle="bold" />
+
+    <ProgressBar
+        android:id="@+id/loadingA"
+        android:layout_width="139dp"
+        android:layout_height="131dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="118dp"
+        android:layout_marginRight="118dp"
+        android:layout_marginBottom="509dp"
+        android:visibility="gone"/>
+
+
+</RelativeLayout>
